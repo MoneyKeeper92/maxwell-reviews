@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock Your REG Exam Textbook — Maxwell CPA Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1rem 4rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: #1a3a5c;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .logo-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e5e2;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.75rem;
+    }
+
+    .pip {
+      height: 3px;
+      border-radius: 2px;
+      flex: 1;
+      background: #e5e5e2;
+    }
+
+    .pip.active { background: #1a3a5c; }
+    .pip.done { background: #1a3a5c; opacity: 0.35; }
+
+    .step-label {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .primary-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background: #1a3a5c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+
+    .primary-btn:hover { background: #14304e; }
+
+    .secondary-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 11px;
+      background: transparent;
+      color: #555;
+      border: 1px solid #d0d0cc;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      transition: background 0.15s;
+    }
+
+    .secondary-btn:hover { background: #f5f5f3; }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #d0d0cc;
+      border-radius: 8px;
+      background: #fafaf8;
+      color: #1a1a1a;
+      resize: vertical;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #1a3a5c;
+      box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.08);
+    }
+
+    textarea::placeholder { color: #aaa; }
+
+    .success-icon {
+      width: 52px;
+      height: 52px;
+      background: #e8f4ec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .checkmark {
+      width: 24px;
+      height: 24px;
+      stroke: #2d7a4f;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .google-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .reward-box {
+      background: #f0f6ff;
+      border: 1px solid #c8ddf5;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .reward-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .reward-text {
+      font-size: 13px;
+      color: #1a3a5c;
+      line-height: 1.5;
+    }
+
+    .reward-text strong {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <div class="logo-mark">M</div>
+    <span class="logo-name">Maxwell CPA Review</span>
+  </div>
+
+  <div class="card">
+    <div class="progress">
+      <div class="pip active" id="pip1"></div>
+      <div class="pip" id="pip2"></div>
+      <div class="pip" id="pip3"></div>
+    </div>
+
+    <!-- Step 1 -->
+    <div id="step1">
+      <div class="step-label">Step 1 of 2</div>
+      <h2>Leave a Google review</h2>
+      <p class="desc">Share your experience with my study materials and unlock the REG exam textbook!</p>
+
+      <div class="reward-box">
+        <span class="reward-icon">📖</span>
+        <div class="reward-text">
+          <strong>Your reward: REG Exam Textbook</strong>
+          Full access to the REG textbook used by Maxwell CPA Review students.
+        </div>
+      </div>
+
+      <a
+        class="primary-btn"
+        href="https://g.page/r/Cc1qaPpJQPUjEBM/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="scheduleReveal()"
+      >
+        <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Write a Google review
+      </a>
+
+      <div id="step1-after" style="display: none;">
+        <button class="secondary-btn" onclick="goStep2()">
+          I've left my review
+          <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" style="display: none;">
+      <div class="step-label">Step 2 of 2</div>
+      <h2>Paste your review here</h2>
+      <p class="desc">Copy the exact text of the review you just left on Google and paste it below.</p>
+      <textarea id="review-text" placeholder="e.g. REG 101 helped me understand the tax framework in a way no other resource did. Kyle's explanations are concise and exam-focused..."></textarea>
+      <button class="primary-btn" onclick="goSuccess()">
+        Unlock my REG textbook
+        <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Step 3: Success -->
+    <div id="step3" style="display: none; text-align: center; padding: 0.5rem 0;">
+      <div class="success-icon">
+        <svg class="checkmark" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="step-label" style="text-align: center;">You're all set</div>
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">Here's your REG textbook</h2>
+      <p class="desc" style="text-align: center; margin-bottom: 1.5rem;">
+        Full access to the REG exam textbook. Use it alongside your studies to reinforce the concepts that matter most on exam day.
+      </p>
+      <a class="primary-btn" href="https://textbook.maxwellstudy.com/reg" target="_blank" rel="noopener noreferrer">
+        Open REG textbook
+        <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function scheduleReveal() {
+      setTimeout(function () {
+        document.getElementById('step1-after').style.display = 'block';
+      }, 1500);
+    }
+
+    function goStep2() {
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+      document.getElementById('pip1').className = 'pip done';
+      document.getElementById('pip2').className = 'pip active';
+    }
+
+    function goSuccess() {
+      var r = document.getElementById('review-text').value.trim();
+      if (!r) {
+        alert('Please paste your review before continuing.');
+        return;
+      }
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'block';
+      document.getElementById('pip2').className = 'pip done';
+      document.getElementById('pip3').className = 'pip active';
+    }
+  </script>
+
+</body>
+</html>
